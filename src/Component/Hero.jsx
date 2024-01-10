@@ -30,7 +30,7 @@ const Hero = () => {
             </div>
             <div>
                 {
-                    usrData && <Details data={usrData} />
+                    usrData ? <Details data={usrData} /> : <div></div>
                 }
             </div>
         </div>
