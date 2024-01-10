@@ -12,8 +12,10 @@ const Details = ({ data }) => {
 
                         <div className='bg-gray-200 p-10 px-3 md:px-4 md:flex  gap-3 w-11/12 dark:bg-gray-900 rounded-xl'>
                             <div className='flex justify-center'>
+                                <div>
 
-                                <img src={data.avatar_url} alt="" loading='lazy' className='rounded-full w-40' />
+                                    <img src={data.avatar_url} alt="" loading='lazy' className='rounded-full w-52' />
+                                </div>
                             </div>
                             <div className='w-full flex flex-col gap-5'>
                                 <div className=' md:flex  '>
