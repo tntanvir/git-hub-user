@@ -3,6 +3,7 @@ import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 const Navber = () => {
     const [them, setThem] = useState(null);
 
@@ -36,7 +37,11 @@ const Navber = () => {
     }
     return (
         <nav className='flex justify-between items-center py-3 px-8 md:px-24 dark:bg-black dark:text-white text-black bg-white '>
-            <h1 className='text-[1.3rem]'>GitHub-Profile</h1>
+            <Link to={'/'}>
+
+                <h1 className='text-[1.3rem]'>GitHub-Profile</h1>
+            </Link>
+
             <div className='text-3xl cursor-pointer'>
                 {
                     them === "dark" ?

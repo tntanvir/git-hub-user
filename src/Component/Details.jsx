@@ -2,6 +2,7 @@ import React from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import { FaLink } from "react-icons/fa6";
 import { GrBlog } from "react-icons/gr";
+import { Link } from 'react-router-dom'
 const Details = ({ data }) => {
     return (
         <div className=''>
@@ -44,18 +45,24 @@ const Details = ({ data }) => {
                                 </div>
                                 <div className='md:mt-16 md:px-6'>
                                     <div className='dark:bg-gray-700 bg-gray-300 rounded-lg md:text-2xl flex justify-around py-3'>
-                                        <div>
-                                            <h1>Repos</h1>
-                                            <h1 className='text-center'>{data.public_repos}</h1>
-                                        </div>
-                                        <div>
-                                            <h1>Followers</h1>
-                                            <h1 className='text-center'>{data.followers}</h1>
-                                        </div>
-                                        <div>
-                                            <h1>Following</h1>
-                                            <h1 className='text-center'>{data.following}</h1>
-                                        </div>
+                                        <Link to={'/repo'}>
+                                            <div className='dark:hover:bg-gray-900 hover:bg-gray-200 md:px-10 px-2 cursor-pointer rounded-md duration-500'>
+                                                <h1>Repos</h1>
+                                                <h1 className='text-center'>{data.public_repos}</h1>
+                                            </div>
+                                        </Link>
+                                        <Link to={'/followers'}>
+                                            <div className='dark:hover:bg-gray-900 hover:bg-gray-200 md:px-10 px-2 cursor-pointer rounded-md duration-500'>
+                                                <h1>Followers</h1>
+                                                <h1 className='text-center'>{data.followers}</h1>
+                                            </div>
+                                        </Link>
+                                        <Link to={'/following'}>
+                                            <div className='dark:hover:bg-gray-900 hover:bg-gray-200 md:px-10 px-2 cursor-pointer rounded-md  duration-500'>
+                                                <h1>Following</h1>
+                                                <h1 className='text-center'>{data.following}</h1>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className='flex '>

@@ -2,14 +2,20 @@
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import Details from "./Details";
+import { useContext } from "react";
+import { gitUser } from "../App";
 const Hero = () => {
+    const [profile, setProfile] = useContext(gitUser);
     const [vlu, setVlu] = useState();
     const [usrData, setUsrData] = useState(null);
     const BtClick = () => {
         // console.log(vlu);
         fetch(`https://api.github.com/users/${vlu}`)
             .then(res => res.json())
-            .then(data => setUsrData(data))
+            .then(data => {
+                setUsrData(data)
+                setProfile(data)
+            })
             .catch(e => console.log(e))
 
         setVlu('');
