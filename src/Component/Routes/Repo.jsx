@@ -38,7 +38,7 @@ const Repo = () => {
     }
 
     return (
-        <div className='flex flex-wrap bg- gap-4 px-5 '>
+        <div className='flex flex-wrap bg- gap-4 px-5 justify-center '>
             {
                 repo && repo.map((e) => (
                     <div key={e.id} className='dark:bg-gray-900 bg-gray-200 min-h-24 w-96 p-3 rounded-md'>
