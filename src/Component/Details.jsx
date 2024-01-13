@@ -24,7 +24,7 @@ const Details = ({ data }) => {
                                         <h1 className='text-2xl'>{data.name}</h1>
                                         <h1 className='text-blue-600'>@{data.login}</h1>
                                         <div className='flex  items-center gap-3'>
-                                            <GrBlog />
+                                            {data.blog && <GrBlog />}
                                             <a href={data.blog} target='_blank' className='w-1/2 flex items-center gap-3'>
                                                 {data.blog}
                                             </a>
@@ -37,7 +37,7 @@ const Details = ({ data }) => {
                                         </div>}
                                         {/* <h1>tntanvir2382018@gmail.com</h1> */}
 
-                                        {data.bio ? <h1>{data.bio}</h1> : <h1 className='md:mt-16'>This profile has no bio</h1>}
+                                        {data.bio && <h1>{data.bio}</h1>}
                                     </div>
                                     <div>
                                         <h1>Joined {data.created_at && new Date(data.created_at).toString().slice(4, 15)}</h1>
@@ -66,10 +66,10 @@ const Details = ({ data }) => {
                                     </div>
                                 </div>
                                 <div className='flex '>
-                                    <div className='w-1/2 flex items-center gap-3'>
+                                    {data.location && <div className='w-1/2 flex items-center gap-3'>
                                         <FaLocationDot />
                                         {data.location}
-                                    </div>
+                                    </div>}
                                     <a href={data.html_url} target='_blank' className='w-1/2 flex items-center gap-3'>
                                         <FaLink />
                                         @{data.login}

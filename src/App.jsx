@@ -10,6 +10,7 @@ import Followers from './Component/Routes/Followers';
 import Following from './Component/Routes/Following';
 import { createContext } from 'react';
 import { useState } from 'react';
+import Followersing from './Component/Routes/Followersing';
 export const gitUser = createContext();
 const App = () => {
   const [profile, setProfile] = useState(null);
@@ -18,11 +19,12 @@ const App = () => {
       <gitUser.Provider value={[profile, setProfile]}>
         <Router>
           <Navber />
-          <Routes>
+          <Routes path="/">
             <Route path='/' element={<Home />} />
-            <Route path='/repo' element={<Repo />} />
-            <Route path='/followers' element={<Followers />} />
-            <Route path='/following' element={<Following />} />
+            <Route path='repo' element={<Repo />} />
+            <Route path='followers' element={<Followers />} />
+            <Route path='following' element={<Following />} />
+            <Route path='/:username' element={<Followersing />} />
           </Routes>
         </Router>
       </gitUser.Provider>
