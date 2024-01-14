@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { gitUser } from "../App";
 const Hero = () => {
     const [profile, setProfile] = useContext(gitUser);
-    const [vlu, setVlu] = useState();
+    const [vlu, setVlu] = useState(null);
     const [usrData, setUsrData] = useState(null);
     const BtClick = () => {
         // console.log(vlu);

@@ -14,7 +14,7 @@ const Following = () => {
             .then(data => setFollowing(data))
     }, []);
     return (
-        <div className='flex justify-center gap-1 flex-wrap p-3'>
+        <div className='flex justify-center min-h-screen gap-1 flex-wrap p-3'>
             {following && following.map((e) => (
                 <Link key={e.div} to={"/" + e.login}>
 

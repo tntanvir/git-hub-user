@@ -4,6 +4,7 @@ import { CiLight } from "react-icons/ci";
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaGitAlt } from "react-icons/fa6";
 const Navber = () => {
     const [them, setThem] = useState(null);
 
@@ -39,7 +40,7 @@ const Navber = () => {
         <nav className='flex justify-between items-center py-3 px-8 md:px-24 dark:bg-black dark:text-white text-black bg-white '>
             <Link to={'/'}>
 
-                <h1 className='text-[1.3rem]'>GitHub-Profile</h1>
+                <h1 className='text-[1.3rem] flex items-center gap-2' > <FaGitAlt className='!text-3xl ' /> Git User</h1>
             </Link>
 
             <div className='text-3xl cursor-pointer'>

@@ -11,6 +11,8 @@ import Following from './Component/Routes/Following';
 import { createContext } from 'react';
 import { useState } from 'react';
 import Followersing from './Component/Routes/Followersing';
+import Footer from './Component/Footer';
+import ContectFrom from './Component/Routes/ContectFrom';
 export const gitUser = createContext();
 const App = () => {
   const [profile, setProfile] = useState(null);
@@ -23,9 +25,11 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='repo' element={<Repo />} />
             <Route path='followers' element={<Followers />} />
+            <Route path='contect/from' element={<ContectFrom />} />
             <Route path='following' element={<Following />} />
             <Route path='/:username' element={<Followersing />} />
           </Routes>
+          <Footer />
         </Router>
       </gitUser.Provider>
     </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaGitAlt } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const year = () => {
@@ -6,22 +8,32 @@ const Footer = () => {
         return dt.getFullYear();
     }
     return (
-        <div className='h-32  p-5'>
-            <div className='flex justify-between px-10'>
-                <div>
-                    <img src="/public/vite.svg" alt="" srcset="" />
-                </div>
-                <div>
+        <div className='md:h-32  p-5'>
+            <div className='md:flex  justify-between md:px-10'>
+                <Link to={'/'}>
+
+                    <div className='text-3xl flex justify-center'>
+                        <FaGitAlt />
+                    </div>
+                </Link>
+                <div className='flex justify-center'>
                     <ul className='flex gap-5'>
-                        <li>About</li>
-                        <li>License</li>
-                        <li>Contribute</li>
-                        <li>Contact Us</li>
+                        <li className='cursor-pointer'><a href="https://github.com/tntanvir/git-user-profile" target='_blank'>About</a></li>
+                        <li className='cursor-pointer'>License</li>
+                        <li className='cursor-pointer'>
+                            <a href="https://github.com/tntanvir/git-user-profile" target='_blank'>Contribute</a></li>
+                        <li className='cursor-pointer'>
+                            <Link to={'/contect/from'}>Contact Us</Link>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div className='text-center border-t-2 mt-5 pt-5'>
-                <h1>© {year()} <a href="https://tanvir23.netlify.app" target='_blank'>Tanvir Rahman</a></h1>
+            <div className='flex justify-between text-center border-t-2 mt-5 pt-5'>
+                <div>
+
+                </div>
+                <div>© {year()} <a href="https://tanvir23.netlify.app" target='_blank'>Tanvir Rahman</a></div>
+                <div>V 1.0.0</div>
             </div>
         </div>
     );

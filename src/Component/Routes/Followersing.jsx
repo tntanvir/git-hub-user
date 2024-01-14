@@ -21,7 +21,7 @@ const Followersing = () => {
             })
     }, [])
     return (
-        <div className=' '>
+        <div className=' min-h-screen '>
 
             {
 
