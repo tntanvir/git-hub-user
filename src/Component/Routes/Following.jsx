@@ -14,19 +14,22 @@ const Following = () => {
             .then(data => setFollowing(data))
     }, []);
     return (
-        <div className='flex justify-center min-h-screen gap-1 flex-wrap p-3'>
-            {following && following.map((e) => (
-                <Link key={e.div} to={"/" + e.login}>
+        <div className='min-h-screen'>
+            <div className='flex justify-center  gap-1 flex-wrap p-3'>
+                {following && following.map((e) => (
+                    <Link key={e.div} to={"/" + e.login}>
 
-                    <div key={e.div} className='md:w-96 w-80 p-2 rounded-md flex dark:bg-gray-900 bg-gray-200  gap-3 '>
-                        <div className='md:w-24 '>
-                            <img src={e.avatar_url} alt="" className='rounded-full  h-12' />
+                        <div key={e.div} className='md:w-96 w-80 p-2 rounded-md flex dark:bg-gray-900 bg-gray-200  gap-3 '>
+                            <div className='md:w-24 '>
+                                <img src={e.avatar_url} alt="" className='rounded-full  h-12' />
+                            </div>
+                            <h1 >{e.login}</h1>
+
                         </div>
-                        <h1 >{e.login}</h1>
 
-                    </div>
-                </Link>
-            ))}
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 };

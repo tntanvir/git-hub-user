@@ -16,9 +16,11 @@ import ContectFrom from './Component/Routes/ContectFrom';
 export const gitUser = createContext();
 const App = () => {
   const [profile, setProfile] = useState(null);
+  const [gThem, setGThem] = useState(null);
+
   return (
     <div className='bg-white min-h-screen dark:bg-black dark:text-white'>
-      <gitUser.Provider value={[profile, setProfile]}>
+      <gitUser.Provider value={[profile, setProfile, gThem, setGThem]}>
         <Router>
           <Navber />
           <Routes path="/">

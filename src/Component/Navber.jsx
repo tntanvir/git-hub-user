@@ -5,21 +5,27 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGitAlt } from "react-icons/fa6";
+import { useContext } from 'react';
+import { gitUser } from '../App';
 const Navber = () => {
     const [them, setThem] = useState(null);
-
+    const [gThem, setGThem] = useContext(gitUser);
     useEffect(() => {
 
         if (localStorage.getItem("them")) {
             setThem(localStorage.getItem("them"));
+            setGThem(localStorage.getItem("them"));
+
         }
 
         else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             setThem('dark');
+            setGThem('dark');
 
         }
         else {
             setThem('light');
+            setGThem('light');
         }
     }, [])
 
@@ -34,6 +40,7 @@ const Navber = () => {
     }, [them]);
     const mode = () => {
         setThem(them === "dark" ? "light" : "dark");
+        setGThem(them === "dark" ? "light" : "dark");
         localStorage.setItem("them", them);
     }
     return (

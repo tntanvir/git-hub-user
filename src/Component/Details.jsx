@@ -2,8 +2,14 @@ import React from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import { FaLink } from "react-icons/fa6";
 import { GrBlog } from "react-icons/gr";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import GitHubCalendar from 'react-github-calendar';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
+import { gitUser } from '../App';
 const Details = ({ data }) => {
+    const [gThem, setGThem] = useContext(gitUser);
     return (
         <div className=''>
 
@@ -64,6 +70,16 @@ const Details = ({ data }) => {
                                             </div>
                                         </Link>
                                     </div>
+                                </div>
+                                <div>
+                                    {
+                                        gThem === "light" ?
+                                            <GitHubCalendar colorScheme='light' username={`${data.login}`} />
+                                            :
+                                            <GitHubCalendar colorScheme='dark' username={`${data.login}`} />
+                                    }
+
+
                                 </div>
                                 <div className='flex '>
                                     {data.location && <div className='w-1/2 flex items-center gap-3'>
