@@ -21,8 +21,7 @@ const Followersing = () => {
             })
     }, [])
     return (
-        <div className='text-white text-center'>
-
+        <div className=' '>
 
             {
 

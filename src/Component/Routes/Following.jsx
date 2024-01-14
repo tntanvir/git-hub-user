@@ -18,7 +18,7 @@ const Following = () => {
             {following && following.map((e) => (
                 <Link key={e.div} to={"/" + e.login}>
 
-                    <div key={e.div} className='w-96 p-2 rounded-md flex dark:bg-gray-900 bg-gray-200  gap-3 '>
+                    <div key={e.div} className='md:w-96 w-80 p-2 rounded-md flex dark:bg-gray-900 bg-gray-200  gap-3 '>
                         <div className='md:w-24 '>
                             <img src={e.avatar_url} alt="" className='rounded-full  h-12' />
                         </div>

@@ -21,7 +21,7 @@ const Hero = () => {
         setVlu('');
     }
     return (
-        <div>
+        <div className="min-h-screen">
 
             <div className='flex justify-center '>
                 <div className='dark:bg-[#fffefe3a] bg-[#bab5b549] rounded-tl-full rounded-bl-full flex justify-between items-center p-2 px-4 md:w-1/2 w-2/3 gap-6'>
